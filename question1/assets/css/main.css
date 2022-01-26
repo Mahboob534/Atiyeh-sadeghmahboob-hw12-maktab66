@@ -1,0 +1,69 @@
+form {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+}
+
+form .input-text {
+  border-radius: 5px;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+form .label-Error {
+  width: 100%;
+  color: #ff0000;
+  border-radius: 5px;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+}
+
+form .input-submit {
+  border-radius: 5px;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  background-color: #04aa6d;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+form .input-submit:hover {
+  background-color: #ff0000;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal .modal-content {
+  background-color: #04aa6d;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 80%;
+}
+/*# sourceMappingURL=main.css.map */
