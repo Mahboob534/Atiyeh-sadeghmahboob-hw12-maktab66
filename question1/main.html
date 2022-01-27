@@ -11,28 +11,28 @@
 
 <body>
   <form class="container" onsubmit="send(event)">
-    <!-- //action="action_page.php" -->
-
-    <label for="fname">First Name</label>
-    <input class="input-text" type="text" id="fname" name="firstname" placeholder="Your name..">
-    <label class="label-Error" for="fError" id="fError"></label>
-
-    <label for="lname">Last Name</label>
-    <input class="input-text" type="text" id="lname" name="lastname" placeholder="Your last name..">
-    <label class="label-Error" for="lError" id="lError"></label>
-
+    <div>
+      <label for="fname">First Name</label>
+      <input class="input-text" type="text" id="fname" name="firstname" placeholder="Your name..">
+    </div>
+    <div>
+      <label for="lname">Last Name</label>
+      <input class="input-text" type="text" id="lname" name="lastname" placeholder="Your last name..">
+    </div>
+<div>
     <label for="country">Country</label>
     <select class="input-text" id="country" name="country">
       <option value="australia">Australia</option>
       <option value="canada">Canada</option>
       <option value="usa">USA</option>
     </select>
-
+  </div>
+  <div>
     <label for="subject">Subject</label>
     <textarea class="input-text" id="subject" name="subject" placeholder="Write something.."
       style="height:200px"></textarea>
-
-    <input class="input-submit" type="submit" value="Submit" name="submitBtn"   >
+    </div>
+    <input class="input-submit" type="submit" value="Submit" name="submitBtn">
 
   </form>
   <div id="myModal" class="modal">
@@ -41,10 +41,10 @@
     <div class="modal-content">
       <p>Your information was successfully registered!</p>
     </div>
-  
+
   </div>
   <script src="./assets/js/main.js">
-   
+
 
   </script>
 

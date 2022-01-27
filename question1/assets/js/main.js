@@ -1,48 +1,64 @@
-const lblFirstName = document.getElementById("fError")
-const lblLastName = document.getElementById("lError")
-const inputFirstname = document.getElementById("fname")
-const inputLastname = document.getElementById("lname")
+
 function send(e) {
-  lblFirstName.innerText = ""
-  inputLastname.innerText = ""
+  let checkError = true
   const target = e.target
   e.preventDefault()
   const values = {}
+  document.querySelectorAll(".text-invalid").forEach((item)=>item.remove())
   for (let index of target) {
     values[index.name] = index.value
+    if (!handleError(index.value, index.name, index)) {
+      checkError = false
+      index.classList.add("input-invalid")
+    } else {
+      index.classList.remove("input-invalid")
+    }
   }
-  if (values.firstname === "") {
-    lblFirstName.innerText = "please enter FirstName"
-    inputFirstname.style.borderColor = "red"
-  }
-  if (values.firstname.length < 3 && values.firstname !== "") {
-    lblFirstName.innerText = "please enter firstname more than 3 caracters"
-    inputFirstname.style.borderColor = "red"
-  }
-  if (values.lastname === "") {
-    lblLastName.innerText = "please enter LastName"
-    inputLastname.style.borderColor = "red";
-  
-  }
-  if(values.firstname !== "" && values.lastname !== ""){
-  localStorage.setItem("firstname", values.firstname)
-  localStorage.setItem("lastname", values.lastname)
-  localStorage.setItem("country", values.country)
-  localStorage.setItem("subject", values.subject)
+  if (checkError) {
+    // localStorage.setItem("firstname", values.firstname)
+    // localStorage.setItem("lastname", values.lastname)
+    // localStorage.setItem("country", values.country)
+    // localStorage.setItem("subject", values.subject)
 
-  var modal = document.getElementById("myModal");
-  modal.style.display = "block";
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+    document.querySelectorAll(".input-text").forEach(item => item.value = '')
+    setTimeout(() => {
+      window.location.href = "hello.html"
+    }, 8000);
+
   }
 }
-setTimeout(()=>{
-  modal.style.display = "none"
-}, 8000);
-document.querySelectorAll(".input-text").forEach(item => item.value='')
+function showMessageError(input, text) {
+  const div = document.createElement("div")
+  div.classList.add("text-invalid")
+  div.innerText = text
+ 
+  input.parentElement.appendChild(div)
 }
-}
+function handleError(value, name, ele) {
+  switch (name) {
+    case "firstname":
+      if (!value) {
+        showMessageError(ele, "please enter firstname")
+        return false
+      }
+      if (value.length < 3) {
+        showMessageError(ele, "please enter firstname more than 3")
+        return false
+      }
+      return true
+    case "lastname":
+      if (!value) {
+        showMessageError(ele, "please enter lastname")
+        return false
+      }
+      return true
 
+    default:
+      return true
+  }
+
+}
 

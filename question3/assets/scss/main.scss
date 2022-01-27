@@ -1,0 +1,11 @@
+@use "sass.string";
+
+$x:50;
+$y:100;
+@mixin sample-mixin($x,$y,$pesude:false) {
+    width: 100%;
+    padding-top:unquote( ( $y / $x ) + '%' );
+}
+body{
+    @include sample-mixin($x,$y,$pesude:false)
+}

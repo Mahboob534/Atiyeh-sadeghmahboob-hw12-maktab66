@@ -23,11 +23,7 @@ form {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-  }
-  .label-Error {
-    width: $width-hieght-size;
-    color: $color-red;
-    @include form-mixin($radius-size, $padding-size);
+    
   }
   .input-submit {
     @include form-mixin($radius-size, $padding-size);
@@ -40,6 +36,15 @@ form {
     }
   }
 }
+.text-invalid{
+  color : $color-red;
+}
+
+.input-invalid{
+    border-color : $color-red;
+  }
+
+
 .modal{
   display: none; 
   position: fixed;
@@ -56,7 +61,7 @@ form {
     margin: auto;
     padding: 20px;
     border: $border;
-    width: 80%;
+    width: 50%;
   }
   
 }
